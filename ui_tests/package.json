@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:ui": "rm -rf ./reports/ui_tests_allure_results && npx playwright test",
-    "report:ui": "allure generate ./reports/ui_tests_allure_results --clean -o ./reports/ui_tests_allure_report && allure open ./reports/ui_tests_allure_report"
+    "test:ui": "rm -rf ../reports/ui_tests_allure_results && npx playwright test",
+    "report:ui": "allure generate ../reports/ui_tests_allure_results --clean -o ./reports/ui_tests_allure_report && allure open ./reports/ui_tests_allure_report"
   },
   "repository": {
     "type": "git",
