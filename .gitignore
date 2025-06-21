@@ -12,3 +12,4 @@ ui_tests/allure-results/
 ui_tests/html-report/
 .env
 .idea/
+/reports/

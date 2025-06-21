@@ -9,15 +9,15 @@ import {defineConfig, devices} from '@playwright/test';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 export default defineConfig({
-    testDir: './ui-tests/tests',
+    testDir: './ui_tests/tests',
     fullyParallel: true,
     forbidOnly: !!process.env.CI,
     retries: process.env.CI ? 2 : 0,
     workers: process.env.CI ? 1 : undefined,
     reporter: [
         ['list'],
-        ['html', {outputFolder: 'ui_tests/html-report', open: 'never'}],
-        ['allure-playwright', {outputFolder: 'ui_tests/allure-results'}]
+        ['html', {outputFolder: './reports/ui_tests_html_report', open: 'never'}],
+        ['allure-playwright', {resultsDir: './reports/ui_tests_allure_results', detail: true, suiteTitle: false}]
     ],
     use: {
         baseURL: 'https://www.cp.pt/passageiros/en',
