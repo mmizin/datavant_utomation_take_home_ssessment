@@ -2,7 +2,10 @@
   "name": "datavant_utomation_take_home_ssessment",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:ui": "rm -rf ../reports/ui_tests_allure_results && npx playwright test",
+    "report:ui": "allure generate ../reports/ui_tests_allure_results --clean -o ./reports/ui_tests_allure_report && allure open ./reports/ui_tests_allure_report"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mmizin/datavant_utomation_take_home_ssessment.git"
@@ -17,6 +20,10 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.53.1",
-    "@types/node": "^24.0.3"
+    "@types/node": "^24.0.3",
+    "allure-playwright": "^3.3.0"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0"
   }
 }
