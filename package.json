@@ -1,0 +1,22 @@
+{
+  "name": "datavant_utomation_take_home_ssessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmizin/datavant_utomation_take_home_ssessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmizin/datavant_utomation_take_home_ssessment/issues"
+  },
+  "homepage": "https://github.com/mmizin/datavant_utomation_take_home_ssessment#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.53.1",
+    "@types/node": "^24.0.3"
+  }
+}
