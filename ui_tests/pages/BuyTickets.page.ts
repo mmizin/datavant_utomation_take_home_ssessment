@@ -88,7 +88,7 @@ export class BuyTicketsPage extends BasePage {
         await this.closeCalendarPopupIfPresent(CalendarModeEnum.Return);
     }
 
-    async selectFromDropDown(fill_locator: string, option_locator: string, text: string, lettersCount: number) {
+    private async selectFromDropDown(fill_locator: string, option_locator: string, text: string, lettersCount: number) {
         await this.page.fill(fill_locator, text.slice(0, lettersCount));
         await this.page.press(fill_locator, 'Backspace');
         await this.page.waitForTimeout(300);
@@ -108,11 +108,11 @@ export class BuyTicketsPage extends BasePage {
         await this.selectDateFromCalendar(retDate, CalendarModeEnum.Return);
     }
 
-    async checkOnlineTicketsTextIsPresent() {
+    async assertBuyTicketsLinkVisible() {
         await expect(this.page.getByRole('heading', {name: loc.onlineTicketsText})).toBeVisible();
     }
 
-    async checkSubmitButtonState(enabled: boolean) {
+    async assertSubmitButtonState(enabled: boolean) {
         const button = this.page.locator(loc.submitButton);
         await expect(button)[enabled ? 'toBeEnabled' : 'toBeDisabled']();
     }

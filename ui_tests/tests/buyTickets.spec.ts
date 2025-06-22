@@ -12,8 +12,8 @@ test.describe('Buy Tickets Page Tests', () => {
         buyTicketsPage = new BuyTicketsPage(page);
         onlineTicketOfficePage = new OnlineTicketOfficePage(page);
         await buyTicketsPage.navigate();
-        await buyTicketsPage.checkOnlineTicketsTextIsPresent();
-        await buyTicketsPage.checkSubmitButtonState(false);
+        await buyTicketsPage.assertBuyTicketsLinkVisible();
+        await buyTicketsPage.assertSubmitButtonState(false);
     });
 
     ticketSearchData.forEach(({from, to, depIn, retIn}) => {
@@ -22,14 +22,14 @@ test.describe('Buy Tickets Page Tests', () => {
             const retDate = formatDateFromNow(retIn);
 
             await buyTicketsPage.fillTravelForm(from, to, depDate, retDate);
-            await buyTicketsPage.checkSubmitButtonState(true);
+            await buyTicketsPage.assertSubmitButtonState(true);
             await buyTicketsPage.submit();
 
-            await onlineTicketOfficePage.checkOnlineTicketOfficeTextIsPresent();
-            await onlineTicketOfficePage.checkCancelButtonIsVisible();
+            await onlineTicketOfficePage.assertOnlineTicketOfficeTextVisible();
+            await onlineTicketOfficePage.assertCancelButtonIsVisible();
             await onlineTicketOfficePage.cancel();
 
-            await buyTicketsPage.checkOnlineTicketsTextIsPresent();
+            await buyTicketsPage.assertBuyTicketsLinkVisible();
             await buyTicketsPage.assertFromInputValue(from);
             await buyTicketsPage.assertDepartureDateValue(depDate);
             await buyTicketsPage.assertReturnDateValue(retDate);
@@ -42,14 +42,14 @@ test.describe('Buy Tickets Page Tests', () => {
             const retDate = formatDateFromNow(retIn);
 
             await buyTicketsPage.fillTravelForm_using_station_dropDown_and_calendarPopUp(from, to, depDate, retDate)
-            await buyTicketsPage.checkSubmitButtonState(true);
+            await buyTicketsPage.assertSubmitButtonState(true);
             await buyTicketsPage.submit();
 
-            await onlineTicketOfficePage.checkOnlineTicketOfficeTextIsPresent();
-            await onlineTicketOfficePage.checkCancelButtonIsVisible();
+            await onlineTicketOfficePage.assertOnlineTicketOfficeTextVisible();
+            await onlineTicketOfficePage.assertCancelButtonIsVisible();
             await onlineTicketOfficePage.cancel();
 
-            await buyTicketsPage.checkOnlineTicketsTextIsPresent();
+            await buyTicketsPage.assertBuyTicketsLinkVisible();
             await buyTicketsPage.assertFromInputValue(from);
             await buyTicketsPage.assertDepartureDateValue(depDate);
             await buyTicketsPage.assertReturnDateValue(retDate);

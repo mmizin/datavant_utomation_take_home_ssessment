@@ -7,11 +7,11 @@ export class OnlineTicketOfficePage extends BasePage {
         super(page);
     }
 
-    async checkOnlineTicketOfficeTextIsPresent() {
+    async assertOnlineTicketOfficeTextVisible() {
         await expect(this.page.getByRole('heading', {name: loc.onlineTicketOfficeText})).toBeVisible();
     }
 
-    async checkCancelButtonIsVisible() {
+    async assertCancelButtonIsVisible() {
         const cancelButton = this.page.locator(loc.cancelButton);
         await cancelButton.scrollIntoViewIfNeeded();
         await expect(cancelButton).toBeVisible();

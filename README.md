@@ -17,6 +17,7 @@ This project is a UI and API automated test suite for [cp.pt](https://www.cp.pt/
 ├── ui_tests               # UI tests (TypeScript + Playwright)
 │   ├── config             # Test data and configuration
 │   ├── fixtures           # UI test fixtures (shared setup)
+│   ├── enums              # enums and constants
 │   ├── locators           # Page-specific locators
 │   ├── pages              # Page Object Model classes
 │   ├── tests              # Test specs
