@@ -1,4 +1,4 @@
-# 🚄 CP.pt QA Automation Test Suite
+# 🔥QA Automation Test Suite🔥
 
 This project is a UI and API automated test suite for [cp.pt](https://www.cp.pt/passageiros/en). It is part of a test task for a QA Engineer role.
 
@@ -20,10 +20,11 @@ This project is a UI and API automated test suite for [cp.pt](https://www.cp.pt/
 │   ├── locators           # Page-specific locators
 │   ├── pages              # Page Object Model classes
 │   ├── tests              # Test specs
-│   └── utils              # Utility functions (e.g., date formatting)
+│   ├── utils              # Utility functions (e.g., date formatting)
+│   ├── playwright.config.ts   # Playwright configuration
+│   ├── package.json           # Project dependencies and scripts
+│   └── package-lock.json      # Lock file for dependencies
 ├── reports                # Allure test results and reports
-├── playwright.config.ts   # Playwright configuration
-├── package.json           # Project dependencies and scripts
 └── README.md              # Project documentation
 ```
 
@@ -44,7 +45,10 @@ This project is a UI and API automated test suite for [cp.pt](https://www.cp.pt/
 
 ### ✅ Run UI Tests
 
+Navigate to the **ui\_tests** folder and run:
+
 ```bash
+npm install
 npm run test:ui
 ```
 
@@ -70,9 +74,70 @@ In your `playwright.config.ts`:
 
 ```ts
 reporters: [
-  ['allure-playwright', { outputFolder: './reports/ui_tests_allure_results' }]
+  ['allure-playwright', { resultsDir: './reports/ui_tests_allure_results' }]
 ]
 ```
+
+---
+
+## 📚 UI Test Setup Guide (Cross-Platform)
+
+### 1. Install Node.js
+
+Make sure Node.js (v18 or newer) is installed:
+
+```bash
+node -v
+```
+
+Install it from [https://nodejs.org](https://nodejs.org) if needed.
+
+### 2. Install Allure Commandline
+
+**Linux/macOS:**
+
+```bash
+npm install -g allure-commandline --save-dev
+```
+
+**Windows:**
+
+```powershell
+npm install -g allure-commandline --save-dev
+```
+
+### 3. Install Dependencies & Browsers
+
+Navigate to `ui_tests/` and run:
+
+```bash
+npm install
+npx playwright install
+```
+
+### 4. Run Tests
+
+**Linux/macOS:**
+
+```bash
+cd ui_tests
+npm run test:ui
+```
+
+**Windows (CMD/PowerShell):**
+
+```cmd
+cd ui_tests
+npm run test:ui
+```
+
+### 5. Generate and Open Allure Report
+
+```bash
+npm run report:ui
+```
+
+> Make sure `allure` is available in your PATH. If not, add it or use `npx allure`.
 
 ---
 
@@ -92,7 +157,7 @@ reporters: [
 
 ---
 
-## 🧑‍💻 Author
+## 🧑‍💼 Author
 
 **Nick Mizin**
 QA Automation Engineer
