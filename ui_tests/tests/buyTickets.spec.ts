@@ -30,7 +30,29 @@ test.describe('Buy Tickets Page Tests', () => {
             await onlineTicketOfficePage.cancel();
 
             await buyTicketsPage.checkOnlineTicketsTextIsPresent();
-            await buyTicketsPage.assertSearchParamsSaved(from, to, depDate, retDate);
+            await buyTicketsPage.assertFromInputValue(from);
+            await buyTicketsPage.assertDepartureDateValue(depDate);
+            await buyTicketsPage.assertReturnDateValue(retDate);
+        });
+    });
+
+    ticketSearchData.forEach(({from, to, depIn, retIn}) => {
+        test(`Submit the request for online tickets using station dropdown and calendar popup: ${from} → ${to}, dep+${depIn}, ret+${retIn}`, async () => {
+            const depDate = formatDateFromNow(depIn);
+            const retDate = formatDateFromNow(retIn);
+
+            await buyTicketsPage.fillTravelForm_using_station_dropDown_and_calendarPopUp(from, to, depDate, retDate)
+            await buyTicketsPage.checkSubmitButtonState(true);
+            await buyTicketsPage.submit();
+
+            await onlineTicketOfficePage.checkOnlineTicketOfficeTextIsPresent();
+            await onlineTicketOfficePage.checkCancelButtonIsVisible();
+            await onlineTicketOfficePage.cancel();
+
+            await buyTicketsPage.checkOnlineTicketsTextIsPresent();
+            await buyTicketsPage.assertFromInputValue(from);
+            await buyTicketsPage.assertDepartureDateValue(depDate);
+            await buyTicketsPage.assertReturnDateValue(retDate);
         });
     });
 });
