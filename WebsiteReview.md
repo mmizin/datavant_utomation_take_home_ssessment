@@ -54,10 +54,6 @@ The train search functionality is solid, but there are several visual and intera
 - **Issue**: Some tooltips or system messages (e.g., calendar, dropdowns) appear in Portuguese.
 - **Suggestion**: Ensure full English localization when language is set.
 
-#### 9. Tight Mobile Layout
-- **Issue**: On smaller screens, form elements are cramped.
-- **Suggestion**: Increase padding and enlarge interactive elements for better tap targets.
-
 ---
 
 ## 2. Front-End Test Automation & HTML Review
@@ -96,7 +92,6 @@ The train search functionality is solid, but there are several visual and intera
 1. **Form Flow**: Logical grouping with clear visual hierarchy
 2. **Button Placement**: Primary action centered, secondary actions to side
 3. **Spacing**: Consistent padding/margins between sections
-4. **Mobile**: Responsive breakpoints for smaller screens
 
 ---
 
@@ -117,9 +112,8 @@ The train search functionality is solid, but there are several visual and intera
 - Add `data-testid` attributes to critical elements
 - Clean up duplicated attributes
 - Standardize naming across languages
-- Ensure full localization for all visible text and error states
 
 ---
 
 ## Summary
-The UI ticket purchase form requires several visual and interaction design improvements to enhance usability. Key issues include poor button visibility, inconsistent link styling, awkward information architecture, and insufficient feedback states. Addressing these along with the HTML consistency issues will significantly improve both user experience and testability.
+The UI ticket purchase form requires several visual and interaction design improvements to enhance usability. Key issues include poor button visibility, inconsistent link styling, awkward information architecture. Addressing these along with the HTML consistency issues will significantly improve both user experience and testability.
