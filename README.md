@@ -1,4 +1,4 @@
-# 🔥QA Automation Test Suite🔥
+# 🔥QA Automation Tests🔥
 
 This project is a UI and API automated test suite for [cp.pt](https://www.cp.pt/passageiros/en). It is part of a test task for a QA Engineer role.
 
